@@ -70,7 +70,7 @@ export async function callAgent(client: MongoClient, query: string, thread_id: s
                         const vectorStore = new MongoDBAtlasVectorSearch(
                             new GoogleGenerativeAIEmbeddings({
                                 apiKey: process.env.GOOGLE_API_KEY,
-                                model: "text-ebedding-004"
+                                model: "text-embedding-004"
                             }),
                             dbConfig
                         )
