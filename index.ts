@@ -34,13 +34,14 @@ async function startServer() {
             }
         })
 
-        .post('/chat/:threadId', async (req: Request, res: Response) => {
+        app.post('/chat/:threadId', async (req: Request, res: Response) => {
             const { threadId } = req.params
             const { message } = req.body
 
             try {
                 const response = await callAgent(client, message, threadId)
-            } catch(error) {
+                res.json({ response })
+            } catch (error) {
                 console.error('Error in chat', error)
                 res.status(500).json({ error: 'Internal server error' })
             }
