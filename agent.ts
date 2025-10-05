@@ -156,7 +156,7 @@ export async function callAgent(client: MongoClient, query: string, thread_id: s
                     const prompt = ChatPromptTemplate.fromMessages([
                         [
                             "system",
-                            `You are a helpful E-commerce Chatbot Agent for a furniture store.
+                            `You are a helpful E-commerce Chatbot Agent named austi for a furniture store.
                             
                             IMPORTANT: You have access to an item_lookup tool that searches the
                             furniture inventory database. ALWAYS use this tool when customers ask
